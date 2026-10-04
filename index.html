@@ -3,141 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola, soy Merlé</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Merlé | Inicio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display for headers & Inter for body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Custom styling & subtle animations -->
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            min-height: 100vh;
-        }
-
-        .font-serif-custom {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Glassmorphism background effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Ambient floating light background blur elements */
-        .ambient-light-1 {
-            background: radial-gradient(circle, rgba(238,206,206,0.6) 0%, rgba(255,255,255,0) 70%);
-        }
-        .ambient-light-2 {
-            background: radial-gradient(circle, rgba(206,220,238,0.6) 0%, rgba(255,255,255,0) 70%);
-        }
-
-        /* Subtle keyframe animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatSlow {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .animate-float {
-            animation: floatSlow 6s ease-in-out infinite;
-        }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); min-height: 100vh; }
+        .font-serif-custom { font-family: 'Playfair Display', serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.78); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.85); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); }
+        .glass-nav { background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.7); }
+        .ambient-light-1 { background: radial-gradient(circle, rgba(238,206,206,0.65) 0%, rgba(255,255,255,0) 70%); }
+        .ambient-light-2 { background: radial-gradient(circle, rgba(206,220,238,0.65) 0%, rgba(255,255,255,0) 70%); }
+        @keyframes floatSlow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
     </style>
 </head>
-<body class="relative flex items-center justify-center min-h-screen overflow-hidden p-6 text-slate-800">
+<body class="relative flex flex-col items-center min-h-screen p-6 text-slate-800">
+    <div class="fixed -top-32 -left-32 w-96 h-96 ambient-light-1 rounded-full pointer-events-none"></div>
+    <div class="fixed -bottom-32 -right-32 w-96 h-96 ambient-light-2 rounded-full pointer-events-none"></div>
 
-    <div class="absolute -top-32 -left-32 w-96 h-96 ambient-light-1 rounded-full pointer-events-none"></div>
-    <div class="absolute -bottom-32 -right-32 w-96 h-96 ambient-light-2 rounded-full pointer-events-none"></div>
+    <header class="w-full max-w-4xl mb-12 z-20">
+        <nav class="glass-nav rounded-full px-6 py-3 flex items-center justify-between shadow-sm">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center font-serif-custom font-bold text-rose-500">M</div>
+                <span class="font-serif-custom text-xl font-bold text-slate-800">Merlé</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-900 text-white">Inicio</a>
+                <a href="portfolio.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900">Portfolio</a>
+                <a href="contacto.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900">Contacto</a>
+            </div>
+        </nav>
+    </header>
 
-    <main class="relative z-10 max-w-xl w-full">
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-center animate-fade-in">
-            
-            <!-- Avatar/Badge Decorativo -->
+    <main class="z-10 max-w-xl w-full my-auto">
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-center">
             <div class="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full bg-rose-50 border border-rose-100 shadow-sm animate-float">
                 <span class="font-serif-custom text-3xl font-bold text-rose-500">M</span>
             </div>
-
-            <h1 class="font-serif-custom text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight leading-tight mb-4">
+            <h1 class="font-serif-custom text-4xl sm:text-5xl md:text-6xl text-slate-900 mb-4">
                 Hola, soy <span class="italic text-rose-500 font-semibold">Merlé</span>.
             </h1>
-
             <p class="text-slate-600 font-light text-lg sm:text-xl max-w-md mx-auto leading-relaxed mb-8">
                 Bienvenido a mi rincón digital. Me apasiona crear, diseñar y compartir cosas hermosas.
             </p>
-
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button onclick="mostrarMensaje()" class="w-full sm:w-auto px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95">
-                    Conóceme más
-                </button>
-                <a href="#contacto" onclick="copiarContacto(event)" class="w-full sm:w-auto px-7 py-3.5 bg-white/80 hover:bg-white text-slate-700 font-medium border border-slate-200/80 rounded-full transition-all duration-300 hover:shadow-sm active:scale-95">
-                    Contacto
-                </a>
+                <a href="portfolio.html" class="w-full sm:w-auto px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-full transition-all text-center">Ver Portfolio</a>
+                <a href="contacto.html" class="w-full sm:w-auto px-7 py-3.5 bg-white/80 hover:bg-white text-slate-700 font-medium border border-slate-200/80 rounded-full transition-all text-center">Contacto</a>
             </div>
-
-            <!-- Interacción / Mensaje dinámico oculto -->
-            <div id="extra-info" class="hidden mt-8 pt-6 border-t border-slate-200/60 text-slate-600 text-sm animate-fade-in">
-                ✨ ¡Gracias por visitar! Si deseas ponerte en contacto o colaborar en un proyecto, no dudes en escribirme.
-            </div>
-
-            <!-- Redes / Iconos sutiles -->
             <div class="mt-10 flex justify-center items-center gap-6 text-slate-400">
-                <a href="#" class="hover:text-rose-500 transition-colors duration-200 text-sm font-medium">Instagram</a>
+                <a href="#" class="hover:text-rose-500 text-sm font-medium">Instagram</a>
                 <span class="text-xs text-slate-300">•</span>
-                <a href="#" class="hover:text-rose-500 transition-colors duration-200 text-sm font-medium">Twitter</a>
+                <a href="#" class="hover:text-rose-500 text-sm font-medium">Twitter</a>
                 <span class="text-xs text-slate-300">•</span>
-                <a href="#" class="hover:text-rose-500 transition-colors duration-200 text-sm font-medium">LinkedIn</a>
+                <a href="#" class="hover:text-rose-500 text-sm font-medium">LinkedIn</a>
             </div>
         </div>
     </main>
-
-    <script>
-        function mostrarMensaje() {
-            const infoDiv = document.getElementById('extra-info');
-            infoDiv.classList.toggle('hidden');
-        }
-
-        function copiarContacto(e) {
-            e.preventDefault();
-            const email = "hola@merle.com";
-            
-            // Reemplazo seguro de navigator.clipboard usando document.execCommand
-            const tempInput = document.createElement("input");
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            const infoDiv = document.getElementById('extra-info');
-            infoDiv.innerHTML = "📋 ¡Correo copiado al portapapeles! <strong>" + email + "</strong>";
-            infoDiv.classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
